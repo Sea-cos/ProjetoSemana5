@@ -2,6 +2,11 @@ public class Voluntario {
     private String nome;
     private String email;
 
+    public Voluntario(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -19,6 +24,6 @@ public class Voluntario {
     }
 
     public void participarProjeto(ProjetoSustentavel projeto){
-
+        projeto.adicionarVoluntario(this);
     }
 }
