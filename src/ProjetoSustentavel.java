@@ -1,11 +1,17 @@
 import java.util.ArrayList;
 
-public class ProjetoSustentavel {
+public abstract class ProjetoSustentavel implements ImpactoAmbiental{
 
     private String nome;
     private String descricao;
-    private ArrayList<Voluntario> voluntarios;
+    private ArrayList<Voluntario> voluntarios = new ArrayList<>();
     private RelatorioImpacto relatorioImpacto;
+
+    public ProjetoSustentavel(){};
+    public ProjetoSustentavel(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+    }
 
     //get e set
     public String getNome() {
@@ -43,10 +49,12 @@ public class ProjetoSustentavel {
 
     //metodos
     public void adicionarVoluntario(Voluntario voluntario){
-
+        voluntarios.add(voluntario);
     }
 
-    public String gerarRelatorioImpacto (int arvoresPlantadas, double reducaoCO2){
-        return "";
+    //validar essa
+    public String gerarRelatorioImpacto(int arvoresPlantadas, double reducaoCO2, double energia, int lixoColetado) {
+        relatorioImpacto = new RelatorioImpacto(arvoresPlantadas, reducaoCO2, energia, lixoColetado);
+        return relatorioImpacto.exibirRelatorio();
     }
 }
