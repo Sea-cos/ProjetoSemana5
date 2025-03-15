@@ -2,11 +2,32 @@ public class RelatorioImpacto {
 
     private int arvoresPlantadas;
     private double reducaoCO2;
+    private double energia;
+    private int lixoColetado;
 
     public RelatorioImpacto(){}
-    public RelatorioImpacto(int arvoresPlantadas, double reducaoCO2){
+
+    public RelatorioImpacto(int arvoresPlantadas, double reducaoCO2, double energia, int lixoColetado){
         this.arvoresPlantadas = arvoresPlantadas;
         this.reducaoCO2 = reducaoCO2;
+        this.energia = energia;
+        this.lixoColetado = lixoColetado;
+    }
+
+    public double getEnergia() {
+        return energia;
+    }
+
+    public void setEnergia(double energia) {
+        this.energia = energia;
+    }
+
+    public int getLixoColetado() {
+        return lixoColetado;
+    }
+
+    public void setLixoColetado(int lixoColetado) {
+        this.lixoColetado = lixoColetado;
     }
 
     public int getArvoresPlantadas() {
@@ -26,7 +47,9 @@ public class RelatorioImpacto {
     }
 
     public String exibirRelatorio() {
-        return "Relatório de Impacto: " + arvoresPlantadas + " árvores plantadas e "
-                + reducaoCO2 + " toneladas de CO2 reduzidas.";
+        return  arvoresPlantadas + " árvores plantadas, "
+                + reducaoCO2 + " toneladas de CO2 reduzidas,"
+                + lixoColetado + " toneladas de lixo coletado e "
+                + energia + " MWh de energia gerada ";
     }
 }

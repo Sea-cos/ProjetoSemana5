@@ -6,8 +6,9 @@ public class ProjetoEnergiaRenovavel extends ProjetoSustentavel{
         this.energiaGerada = energiaGerada;
     }
 
+
     @Override
     public void calcularImpacto() {
-        System.out.println("Impacto: " + energiaGerada + " MWh de energia gerada.");
+        System.out.println("Impacto ambiental: " + energiaGerada + " MWh de energia gerada.");
     }
 }

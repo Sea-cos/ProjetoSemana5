@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String relatorio;
 
 
         System.out.println("Escolha o tipo de organização (1 para ONG, 2 para Empresa):");
@@ -37,12 +38,15 @@ public class Main {
         switch (tipoProjeto) {
             case 1:
                 projeto = new ProjetoReflorestamento("Reflorestamento da Amazônia", "Reflorestamento em áreas críticas", 1000);
+                relatorio = projeto.gerarRelatorioImpacto(1000, 200.5, 0, 0);
                 break;
             case 2:
                 projeto = new ProjetoReciclagem("Reciclagem Urbana", "Reciclagem de plásticos", 500.0);
+                relatorio = projeto.gerarRelatorioImpacto(0, 200.5, 0, 500);
                 break;
             case 3:
                 projeto = new ProjetoEnergiaRenovavel("Energia Solar", "Geração de energia solar", 2500.0);
+                relatorio = projeto.gerarRelatorioImpacto(0, 200.5, 2500.0, 0);
                 break;
             default:
                 System.out.println("Opção inválida.");
@@ -81,7 +85,6 @@ public class Main {
                     System.out.println(organizacao.listarProjetos());
                     break;
                 case 2:
-                    String relatorio = projeto.gerarRelatorioImpacto(1000, 200.5);
                     System.out.println("Relatório de Impacto: " + relatorio);
                     break;
                 case 3:

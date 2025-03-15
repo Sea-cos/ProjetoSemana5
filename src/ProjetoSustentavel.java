@@ -53,8 +53,8 @@ public abstract class ProjetoSustentavel implements ImpactoAmbiental{
     }
 
     //validar essa
-    public String gerarRelatorioImpacto(int arvoresPlantadas, double reducaoCO2) {
-        relatorioImpacto = new RelatorioImpacto(arvoresPlantadas, reducaoCO2);
+    public String gerarRelatorioImpacto(int arvoresPlantadas, double reducaoCO2, double energia, int lixoColetado) {
+        relatorioImpacto = new RelatorioImpacto(arvoresPlantadas, reducaoCO2, energia, lixoColetado);
         return relatorioImpacto.exibirRelatorio();
     }
 }
